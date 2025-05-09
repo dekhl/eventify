@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registration</title>
+  <style>
+    /* Your CSS here (same as yours, unchanged) */
+    body {
+      background: #5d75e1;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #2d3436;
+      margin: 0;
+      padding: 20px;
+    }
+    #registrationForm {
+      max-width: 600px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+    }
+    #registrationForm h2 {
+      text-align: center;
+      color: #00b894;
+      margin-bottom: 20px;
+    }
+    #registrationForm label {
+      margin-top: 15px;
+      font-weight: 600;
+      color: #2d3436;
+    }
+    #registrationForm input,
+    #registrationForm select,
+    #registrationForm textarea {
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      font-size: 15px;
+    }
+    #registrationForm input:focus,
+    #registrationForm select:focus,
+    #registrationForm textarea:focus {
+      border-color: #e020bd;
+      box-shadow: 0 0 5px rgba(46, 16, 242, 0.5);
+      outline: none;
+    }
+    #registrationForm button {
+      margin-top: 20px;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+    #registrationForm button[type="submit"] {
+      background-color: #00b894;
+      color: white;
+    }
+    #registrationForm button[type="submit"]:hover {
+      background-color: #5a0ba0;
+    }
+    #registrationForm button#cancelRegistration {
+      background-color: #d63031;
+      color: white;
+    }
+    #registrationForm button#cancelRegistration:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="registrationForm" onsubmit="submitForm(event)">
+    <h2><center>Event Registration</center></h2>
+
+    <label for="fullName">Full Name</label>
+    <input type="text" id="fullName" name="fullName" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="regs-num">Registration Number</label>
+    <input type="text" id="regs-num" name="regs-num" required>
+
+    <label for="role">Your Role</label>
+    <select id="role" name="role" required>
+      <option value="">Select your role</option>
+      <option value="student">Student</option>
+      <option value="faculty">Faculty</option>
+      <option value="guest">Guest</option>
+      <option value="organizer">Organizer</option>
+    </select>
+
+    <label for="eventType">Event Type</label>
+    <select id="eventType" name="eventType" required onchange="updateEventOptions()">
+      <option value="">Select Event Type</option>
+      <option value="workshop">Workshop</option>
+      <option value="seminar">Seminar</option>
+      <option value="cultural">Cultural Event</option>
+      <option value="competitions">Competitions</option>
+    </select>
+
+    <label for="eventName">Event Name</label>
+    <select id="eventName" name="eventName" required>
+      <option value="">Select Event</option>
+      <!-- Workshop -->
+      <option value="Python-Workshop" class="workshop">Python Workshop</option>
+      <option value="Full-Stack-Web-Dev-Workshop" class="workshop">Full Stack Web-Dev Workshop</option>
+      <!-- Seminar -->
+      <option value="mentalHealthSeminar" class="seminar">Mental Health & Campus Life Seminar</option>
+      <option value="careerSeminar" class="seminar">Career Development Seminar</option>
+      <!-- Cultural -->
+      <option value="orientation2026" class="cultural">Orientation Spring 2026</option>
+      <option value="annualDinner" class="cultural">Annual Dinner</option>
+      <option value="musicConcert" class="cultural">Music Concert</option>
+      <option value="debateComp" class="cultural">Debate Competition</option>
+      <option value="convocation" class="ceremony">Annual Convocation</option>
+      <!-- Competitions -->
+      <option value="drama-fest" class="competitions">Drama Fest</option>
+      <option value="debate-competition" class="competitions"> Debate Competition</option>
+    </select>
+
+    <label for="additionalNotes">Any Special Requirements or Notes</label>
+    <textarea id="additionalNotes" name="additionalNotes" rows="4" placeholder="Let us know if you need special assistance or have any notes."></textarea>
+
+    <button type="submit">Register</button>
+    <button type="button" id="cancelRegistration" onclick="window.location.href='index.html'">Cancel</button>
+  </form>
+
+  <script>
+    function updateEventOptions() {
+      const eventType = document.getElementById("eventType").value;
+      const options = document.getElementById("eventName").options;
+
+      for (let i = 0; i < options.length; i++) {
+        const opt = options[i];
+        if (opt.className === eventType || opt.value === "") {
+          opt.style.display = "block";
+        } else {
+          opt.style.display = "none";
+        }
+      }
+
+      document.getElementById("eventName").value = ""; // Reset event name
+    }
+
+    function submitForm(event) {
+      event.preventDefault();
+      const name = document.getElementById("fullName").value;
+      const email = document.getElementById("email").value;
+
+      alert("Thank you " + name + "! You have registered successfully for the event.");
+      window.location.href = "index.html"; 
+    }
+  </script>
+</body>
+</html>

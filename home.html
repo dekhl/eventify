@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eventify Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="header">
+    <nav class="nav">
+      <a href="#" class="nav_logo">Eventify</a>
+      <div class="nav_item">
+        <a href="home.html" class="nav_link">Home</a>
+        <a href="events.html" class="nav_link">Events</a>
+        <a href="contact.html" class="nav_link">Contact</a>
+        <form class="nav_search" onsubmit="handleSearch(event)">
+            <input type="text" placeholder="Search events..." class="search_input" />
+          </form>
+          
+        <a href="index.html" class="button">Register</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="home" style="padding-top: 80px;">
+    <div style="z-index: 101; position: relative; text-align: center; color: white; top: 40%;">
+      <h1 style="font-size: 48px; margin-bottom: 20px;">Welcome to Eventify</h1>
+      <p style="font-size: 18px; max-width: 600px; margin: 0 auto;">Your one-stop platform for discovering, registering, and organizing amazing university events.</p>
+      <a href="events.html" class="button" style="margin-top: 30px; display: inline-block;">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Footer (Optional) -->
+  <footer style="text-align: center; padding: 20px; color: white; background-color: #111;">
+    &copy; 2025 Eventify. All rights reserved.
+  </footer>
+</body>
+</html>

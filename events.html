@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eventify - Events</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .events-container {
+      padding: 50px;
+      background: #f9f9f9;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .event-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    .event-card h3 {
+      margin-top: 0;
+    }
+
+    .event-card button {
+      margin-top: 10px;
+      background-color: #6c5ce7;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .event-card button:hover {
+      background-color: #5a4bcf;
+    }
+
+    .event-genre {
+      font-weight: bold;
+      color: #555;
+    }
+    .register-now:hover {
+        background-color: #4834d4;
+    }
+    .event-image {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+      
+      
+  </style>
+</head>
+<body>
+
+    <header class="header-events">
+        <nav class="nav">
+          <a href="home.html" class="nav_logo">Eventify</a>
+          <div class="search-container">
+            <input type="text" id="eventSearch" placeholder="Search events..." onkeyup="searchEvents(event)">
+          </div>
+      
+          <div class="nav_item">
+            <!-- Navigation Links Here -->
+          </div>
+        </nav>
+      </header>
+      
+    <section class="events-container">
+      
+      <!-- Workshop Events -->
+      <div class="event-card">
+        <img src="python-workshop.jpeg" alt="Python Workshop" class="event-image">
+        <h3>Python Workshop</h3>
+        <p>Date: June 1-3, 2026<br>Location: Computer Lab 5</p>
+        <p class="event-genre">Genre: Workshop</p>
+        <button type="button" onclick="showEventDetails('Python-Workshop')">View Details</button>
+        <button class="register-now">Register Now</button>
+      </div>
+
+     
+      <div class="event-card">
+        <img src="career-development.jpeg" alt="Career Development Seminar" class="event-image">
+        <h3>Career Development Seminar</h3>
+        <p>Date: June 15, 2026<br>Location: Conference Hall</p>
+        <p class="event-genre">Genre: Seminar</p>
+        <button type="button" onclick="showEventDetails('Career-Development-Seminar')">View Details</button>
+        <button class="register-now">Register Now</button>
+      </div>
+
+      <div class="event-card">
+        <img src="mentalHealth-seminar.jpeg" alt="Mental Health & Campus Life" class="event-image">
+        <h3>Mental Health & Campus Life</h3>
+        <p>Date: July 10, 2026<br>Location: Seminar Room 2</p>
+        <p class="event-genre">Genre: Seminar</p>
+        <button type="button" onclick="showEventDetails('Mental Health & Campus Life')">View Details</button>
+        <button class="register-now">Register Now</button>
+      </div>
+
+      <!-- Cultural Events -->
+      <div class="event-card">
+        <img src="orientation.jpeg" alt="Orientation Spring 2026" class="event-image">
+        <h3>Orientation Fall 2026</h3>
+        <p>Date: August 3, 2026<br>Location: Auditorium A</p>
+        <p class="event-genre">Genre: Workshop</p>
+        <button type="button" onclick="showEventDetails('Orientation Fall 2026')">View Details</button>
+        <button class="register-now">Register Now</button>
+      </div>
+
+      <div class="event-card">
+        <img src="concert.jpeg" alt="Music Concert" class="event-image">
+        <h3>Music Concert </h3>
+        <p>Date: August 15, 2026<br>Location: Grond</p>
+        <p class="event-genre">Genre: Cultural Event</p>
+        <button type="button" onclick="showEventDetails('Music Concert')">View Details</button>
+        <button class="register-now">Register Now</button>
+      </div>
+
+      <!-- Competitions -->
+      <div class="event-card">
+        <img src="debate.jpeg" alt="Debate Competition" class="event-image">
+        <h3>Debate Competition</h3>
+        <p>Date: Aug 12, 2026<br>Location: Auditorium B</p>
+        <p class="event-genre">Genre: Competition</p>
+        <button type="button" onclick="showEventDetails('Debate Competition')">View Details</button>
+        <button class="register-now">Register Now</button>
+      </div>
+
+      <div class="event-card">
+        <img src="annual-dinner.jpeg" alt="Annual Dinner" class="event-image">
+        <h3>Annual Dinner</h3>
+        <p>Date: 2 Sept, 2026<br>Location: Gallery Room</p>
+        <p class="event-genre">Genre: Cultural Event</p>
+        <button type="button" onclick="showEventDetails('Annual Dinner')">View Details</button>
+        <button class="register-now">Register Now</button>
+      </div>
+
+      <div class="event-card">
+        <img src="drama-fest.jpeg" alt="Drama Fest" class="event-image">
+        <h3>Drama Fest</h3>
+        <p>Date: September 18, 2026<br>Location: Auditorium C</p>
+        <p class="event-genre">Genre: Competition</p>
+        <button type="button" onclick="showEventDetails('Drama Fest')">View Details</button>
+        <button class="register-now">Register Now</button>
+      </div>
+
+      <div class="event-card">
+        <img src="web-workshop.jpeg" alt="Full Stack Web-Dev Workshop" class="event-image">
+        <h3>Full Stack Web-Dev Workshop</h3>
+        <p>Date: October 25, 2026<br>Location: Gymnasium</p>
+        <p class="event-genre">Genre: Workshop</p>
+        <button type="button" onclick="showEventDetails('Full Stack Web-Dev Workshop')">View Details</button>
+        <button class="register-now">Register Now</button>
+      </div>
+
+      <div class="event-card">
+        <img src="convocation.jpeg" alt="Convocation Ceremony" class="event-image">
+        <h3>Convocation Ceremony</h3>
+        <p>Date: November 5, 2026<br>Location: Main Auditorium</p>
+        <p class="event-genre">Genre: Cultural Event</p>
+        <button type="button" onclick="showEventDetails('Convocation Ceremony')">View Details</button>
+        <button class="register-now">Register Now</button>
+      </div>
+            
+    </section>
+   <!-- Event Details Modal -->
+<div id="eventDetailsModal" style="display:none; background:white; border-radius:10px; padding:20px; margin-top:20px; box-shadow:0 0 10px rgba(0,0,0,0.2);">
+  <h3>Event Details</h3>
+  <p id="eventDetailsText"></p>
+  <button onclick="closeEventDetails()">Close</button>
+</div>
+
+<!-- General Modal for Events -->
+<div id="eventModal" style="display:none; position:fixed; top:20%; left:50%; transform:translate(-50%, 0); background:white; padding:20px; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.3); z-index:1000; max-width:90%; width:400px;">
+  <span id="modalClose" style="float:right; cursor:pointer; font-weight:bold;">&times;</span>
+  <h2 id="modalTitle"></h2>
+  <pre id="modalBody" style="white-space:pre-wrap;"></pre>
+</div>
+
+<!-- Modal Backdrop -->
+<div id="modalBackdrop" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999;"></div>
+  <script>
+    function searchEvents(event) {
+        if (event.key === "Enter") {
+          const query = event.target.value.toLowerCase();
+          const cards = document.querySelectorAll('.event-card');
+    
+          cards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            card.style.display = title.includes(query) ? "block" : "none";
+          });
+        }
+      }
+    
+      document.querySelectorAll(".register-now").forEach(button => {
+          button.addEventListener("click", function () {
+            const eventTitle = this.closest('.event-card').querySelector('h3').textContent;
+            window.location.href = `eventRegistration.html?title=${encodeURIComponent(eventTitle)}`;
+          });
+        });
+
+      // Modal close button
+      document.getElementById('modalClose').addEventListener('click', closeEventDetails);
+    
+        const eventDetails = {
+          "Python-Workshop": "📅 Date: June 1-3, 2026\n📍 Venue: Computer Lab 5\n🕒 Time: 10 AM - 1 PM\n👨‍💻 Learn the basics of Python programming in a 3-day interactive session.",
+          
+          "Career-Development-Seminar": "📅 Date: June 15, 2026\n📍 Venue: Conference Hall\n🕒 Time: 2 PM - 4 PM\n🚀 Learn how to grow your career with expert guidance and real-world tips.",
+          
+          "Mental Health & Campus Life": "📅 Date: July 10, 2026\n📍 Venue: Seminar Room 2\n🕒 Time: 11 AM - 12:30 PM\n🧠 Explore practical strategies to manage stress and succeed in university life.",
+          
+          "Orientation Fall 2026": "📅 Date: August 3, 2026\n📍 Venue: Auditorium A\n🕒 Time: 9 AM - 12 PM\n🎉 Welcome the new semester with an introduction to campus life, faculty, and facilities.",
+          
+          "Music Concert": "📅 Date: August 15, 2026\n📍 Venue: Ground\n🕒 Time: 6 PM - 9 PM\n🎵 Enjoy electrifying performances from top student bands and guest artists.",
+          
+          "Debate Competition": "📅 Date: August 12, 2026\n📍 Venue: Auditorium B\n🕒 Time: 1 PM - 3 PM\n🎙️ Engage in thought-provoking debates and win exciting prizes.",
+          
+          "Annual Dinner": "📅 Date: September 2, 2026\n📍 Venue: Gallery Room\n🕒 Time: 7 PM - 10 PM\n🍽️ Celebrate the year's achievements with a formal dinner, awards, and entertainment.",
+          
+          "Drama Fest": "📅 Date: September 18, 2026\n📍 Venue: Auditorium C\n🕒 Time: 4 PM - 6 PM\n🎭 Witness creative stage performances from student drama groups across departments.",
+          
+          "Full Stack Web-Dev Workshop": "📅 Date: October 25, 2026\n📍 Venue: Gymnasium\n🕒 Time: 9 AM - 3 PM\n💻 Master the skills of full-stack web development with hands-on exercises and expert mentorship.",
+          
+          "Convocation Ceremony": "📅 Date: November 5, 2026\n📍 Venue: Main Auditorium\n🕒 Time: 10 AM - 12 PM\n🎓 Celebrate the graduation of our students and their successful journey at the university."
+        };
+        
+      
+        function showEventDetails(eventName) {
+          const title = eventName.replace(/[-]/g, ' '); // Prettier title
+          document.getElementById('modalTitle').innerText = title;
+          document.getElementById('modalBody').innerText = eventDetails[eventName] || "Details not available.";
+          document.getElementById('eventModal').style.display = 'block';
+          document.getElementById('modalBackdrop').style.display = 'block';
+        }
+      
+        document.getElementById('modalClose').onclick = function () {
+          document.getElementById('eventModal').style.display = 'none';
+          document.getElementById('modalBackdrop').style.display = 'none';
+        };
+
+        function closeEventDetails() {
+          document.getElementById('eventModal').style.display = 'none';
+          document.getElementById('modalBackdrop').style.display = 'none';
+        }
+      
+        // Close button click event
+        document.addEventListener("DOMContentLoaded", function () {
+          document.getElementById('modalClose').onclick = closeEventDetails;
+          document.getElementById('modalBackdrop').onclick = closeEventDetails;
+        });
+
+      </script>
+</body>
+</html>
+  
