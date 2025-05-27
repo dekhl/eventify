@@ -9,7 +9,7 @@ Live Server Link
 [Eventify domain](http://eventify-portal.com)
 
 Video Explainer
-([watch the demo video](https://drive.google.com/file/d/105pchJtR_G3ctbGGyjOVrFz1TWKGWIQK/view?usp=sharing)
+([watch the explaination video](https://drive.google.com/file/d/105pchJtR_G3ctbGGyjOVrFz1TWKGWIQK/view?usp=sharing)
 
 Documnetation
 ([view the document](https://drive.google.com/file/d/1PL1Ov_hfJ_Vj9oJnOdub_QOjlN-nFfYN/view)
